@@ -3,7 +3,7 @@
 Team Memebers: Abiel Fattore and Brandon Zink
 
 How to Download the code:
-Download the file called FinalProject, this contains all the files needed to run the code. Just open the FinalProject.cbp and compile and run it.
+Download the zip using "Download zip" in the topright corner. Unpack the file and op the file called FinalProject, this contains all the files needed to run the code. Just open the FinalProject.cbp and compile and run it.
 
 Project Summary:
 Our project consists of a graph containing a vector of stores within each city. The project allows the user to be able to transfer goods between each city and store, and buy goods a store them in a warehouse in each city. There is also a currency system implemented so that the project could become a playable game. There are costs for transporting and buying goods and then some randomized amount will be sold each week. To keep the game going, the user with have to keep from having a balance of $0. This could also be very easily transiioned into a goods tracking program for a grocery company by just editing out the money part. That was our original thought, but the addition of the money and "game" tend to make it a bit more fun.
