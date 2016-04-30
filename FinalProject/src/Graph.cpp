@@ -238,6 +238,10 @@ void Graph::printStores(std::string cityName) //used to print the stores and the
 {
     vertex* tempPrintStores = new vertex();
     tempPrintStores = findVertex(cityName);
+    if (tempPrintStores==NULL){
+        cout << "City does not exist" << endl;
+        return;
+    }
     for(int i = 0; i<5; i++)
     {
         cout<<"Store "<<tempPrintStores->stores[i].storeNumber<<", stock is "<<tempPrintStores->stores[i].stock<<endl;
@@ -248,6 +252,10 @@ void Graph::buyGoods(std::string cityName) //used to buy goods at a warehouse in
 {
     vertex* tempBuyGoods = new vertex();
     tempBuyGoods = findVertex(cityName);
+    if (tempBuyGoods==NULL){
+        cout << "City does not exist" << endl;
+        return;
+    }
     int numGoods;
     cout<<"How many goods would you like to buy?"<<endl;
     cin >> numGoods;
@@ -266,6 +274,10 @@ void Graph::transferGoods(std::string cityname, int store)
 {
     vertex* tempTransferGoods = new vertex();
     tempTransferGoods = findVertex(cityname);
+    if (tempTransferGoods==NULL){
+        cout << "City does not exist" << endl;
+        return;
+    }
     int transferGood;
     cout<<"How many goods would you like to transfer?"<<endl;
     cin >> transferGood;
@@ -299,12 +311,21 @@ vertex* Graph::findVertex(string name)
             return &vertices[i];
         }
     }
+    return NULL;
 }
 
 void Graph::transerCities(std::string startCity, std::string endCity, int amount) //transfer goods between cities
 {
     vertex* tempTransferCitiesStart = findVertex(startCity);
     vertex* tempTransferCitiesEnd = findVertex(endCity);
+    if (tempTransferCitiesStart==NULL){
+        cout << "Start city does not exist" << endl;
+        return;
+    }
+    if (tempTransferCitiesEnd==NULL){
+        cout << "End city does not exist" << endl;
+        return;
+    }
     if(amount > tempTransferCitiesStart->warehouseStock)
     {
         cout<<"Not enough goods in starting city to transfer"<<endl;
